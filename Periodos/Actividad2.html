@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+	*{
+		background: mediumaquamarine;
+	}
+		.ing:hover{
+            background: white;
+            -ms-transform: scale(1,1.4); 
+  			transform: scale(1,1.4);
+
+		}
+		.ag{
+			height: 640px;
+			width: 400px;
+			background: yellow;
+		}
+		.inp{
+			position: absolute;
+			width:300px ;
+			height: 40px;
+			top: 300px;
+			 border-radius:20px;
+			font-size: 20px;
+			background-image: linear-gradient(yellow, white);
+		}
+		.inpu{
+			position: absolute;
+			width:300px ;
+			height: 40px;
+			top: 360px;
+			border-radius:20px;
+			font-size: 20px;
+			background-image: linear-gradient(yellow, white);
+		}
+		.ing{
+			position: absolute;
+			top: 420px;
+			background: mediumaquamarine;
+			height: 40px;
+			width: 280px;
+			font-size: 40px;
+			border-radius: 20px;
+			border: 2px solid mediumaquamarine;
+			padding-left: 23px;
+			transition: 0.4s all;
+		}
+		.men{
+			position: absolute;
+			top: 10px	;
+			left:700px ;
+			height: 640px;
+			width: 640px;
+			background: lightskyblue;
+			font-size: 60px;
+		}
+		.soni{
+			z-index: 20;
+		}
+	</style>
+	<meta charset="utf-8">
+	<title>Menú</title>
+</head>
+<body>
+<div class="ag" id="agg"></div>
+<div class="ing" onclick="ingresar()">Guardar</div>
+<audio src="Grabación.mp3" class="soni" id="sonido"></audio>
+<div class="men" id="menu"></div>
+<form>
+	<input class="inp" id="nom" type="text" placeholder="Ingresa el nombre del producto"></input>
+	<input class="inpu" id="pre" type="text" placeholder="Ingresa el precio del producto"></input>
+</form>
+
+<script type="text/javascript">
+	x=[];
+	function ingresar(){
+		sonido.play();
+		y=nom.value;
+		z=pre.value;
+		x.push(y,z)
+		n=y;
+		nombre=menu.innerHTML;
+		nombre=nombre+n;
+		menu.innerHTML=nombre+"<br>";
+		n=z;
+		nomb=menu.innerHTML;
+		nomb=nomb+n;
+		menu.innerHTML=nomb+"<br>";
+	}
+</script>
+</body>
+</html>
