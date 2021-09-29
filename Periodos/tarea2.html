@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body{
+	background: lightseagreen;
+}
+.c:hover{
+	background: black;
+	opacity: 0.6;
+	border: 2px solid lightseagreen;
+	 -ms-transform: scale(0.9,1.1); 
+  	transform: scale(0.9,1.1);
+  	transition: 0.4s all;
+
+}
+.borde{
+	position: absolute;
+	left: 80px;
+	top: 50px;
+	width: 1240px;
+	height: 580px;
+	background: purple;
+	border-radius: 18px;
+}
+.c{
+	position: absolute;
+	left: 450px;
+	top: 350px;
+	width: 200px;
+	height: 200px;
+	background: black;
+	border: solid 4px lightseagreen;
+	border-radius: 12px;
+}
+	</style>
+	<meta charset="utf-8">
+	<title>Tarea #2</title>
+
+
+</head>
+<audio src="Grabación.mp3" id="soni"></audio>
+<body>
+	<div class="borde"></div>
+	<div class="c" id="cuadro" onclick="move()"></div>
+	<script type="text/javascript">
+		function move() {
+			soni.play();
+			x=Math.floor((Math.random() * (1240-80))+80);
+			y=Math.floor((Math.random() * (580-70))+70);
+			cuadro.style.left=x+"px";
+			cuadro.style.top=y+"px";
+			
+		}
+	</script>
+</body>
+</html>
