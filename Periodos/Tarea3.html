@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tarea #3</title>
+	<style type="text/css">
+	@font-face{
+		font-family: lol;
+		src: url(buckerley.woff);
+	}
+		body{
+			background: black;
+
+		}
+		.b:hover{
+			background: #9BFD2C ;
+		}
+		.g:hover{
+			background:#34A9F0  ;
+		}
+		.j:hover{
+			background:mediumpurple  ;
+		}
+		.e:focus{
+			background-color: #9BFD2C ;
+		}
+		.a{
+			position: absolute;
+			left: 240px;
+			top: 10px;
+			width: 850px;
+			height: 190px;
+			background: mediumaquamarine;
+			opacity: 0.7;
+			border-radius: 14px;
+			color: white;
+			box-sizing: border-box;
+			padding-left: 350px;
+			padding-top: 30px;
+			font-size: 80px;
+			font-family: lol;
+			background-image: linear-gradient(black,gray,white);
+			border: 4px solid lightseagreen;
+		}
+		.b{
+			position: absolute;
+			left: 935px;
+			top: 220px;
+			width: 150px;
+			height: 150px;
+			background: black;
+			border: 2px solid lightgreen;
+			opacity: 0.7;
+			border-radius: 12px;
+			font-size: 40px;
+			color: white;
+			font-family: lol;
+			padding-left: 6px;
+			box-sizing: border-box;
+		}
+		.e{
+			position: absolute;
+			top: 250px;
+			left: 240px;
+			height: 90px;
+			width: 300px;
+			font-size: 30px;
+			background: black;
+			color: lightseagreen;
+			border-radius: 40px;
+			border: 4px solid lightseagreen;
+			color: white;
+			font-family: lol;
+
+		}
+		.d{
+			position: absolute;
+			top: 410px;
+			left: 240px;
+			height: 190px;
+			width: 850px;
+			background: lightseagreen;
+			opacity: 0.7;
+			border-radius: 12px;
+			border: 2px solid lightgreen;
+			font-size: 60px;
+			color: floralwhite;
+			font-family: lol;
+			 background-image: linear-gradient(black,gray,white);
+
+		}
+		
+		.g{
+			position: absolute;
+			top: 220px;
+			left: 590px;
+			background: black;
+			height: 150px;
+			width: 150px;
+			opacity: 0.7;
+			border-radius: 12px;
+			border: 2px solid lightseagreen;
+			color: white;
+			font-size: 40px;
+			font-family: lol;
+			padding-left: 6px;
+			box-sizing: border-box;
+		}
+		.j{
+			position: absolute;
+			left: 765px;
+			top: 220px;
+			width: 150px;
+			height: 150px;
+			background: black;
+			border: 2px solid lightgreen;
+			opacity: 0.7;
+			border-radius: 12px;
+			font-size: 40px;
+			color: white;
+			font-family: lol;
+			padding-left: 6px;
+			box-sizing: border-box;
+
+		}
+		#lm{
+			position: absolute;
+			top: 420px;
+			left: 840px;
+			color: white;
+			font-family: lol;
+			font-size: 60px;
+			opacity: 0.7;
+		}
+		#no{
+			width: 1340px;
+			height:620px;
+			border: 2px solid lightgreen;
+			font-family: lol;
+			font-size: 100px;
+			color: white;
+			z-index: 100;
+		}
+	</style>
+</head>
+<body onkeypress="insert()">
+	<div class="a" id="square"></div>
+	<div class="b" id="ll" onclick="num()">Generar pregunta</div>
+	<div class="d" id="i"></div>
+	<div class="g" id="h" onclick="resp()">Enviar respuesta</div>
+	<div class="j" id="k" onclick="contar()">Iniciar contador</div>
+	<div id="lm"></div>
+	<div id="no"></div>
+	<form>
+		<input  class="e" id="f" type="text" placeholder="Respuesta">
+	</form>
+	<script type="text/javascript">
+		m=[];
+		b=0;
+		function num(){ 
+			b=b+1;
+			if (b==1) {
+			i.innerHTML="Inicia el contador para obtener puntos, recarga la página";
+		}
+		ll.style.background="#9BFD2C";
+		x=Math.floor((Math.random() * (10-1))+1);
+		y=Math.floor((Math.random() * (10-1))+1);
+		if (x<=y) {
+			square.innerHTML=x+"+"+y;
+			respu=x+y;
+
+
+		}else{
+			square.innerHTML=x+"-"+y;
+			respu=x-y;
+		}
+		
+		}
+		score=0;
+		function resp() {
+			h.style.background="#34A9F0";
+			l=(f.value);
+			m.push(l);
+			if (l==respu) {
+				score=score+10;
+				i.innerHTML="Score:"+" "+score;
+			}else{
+				score=score-10;
+				i.innerHTML="Score:"+" "+score;
+			}
+		}
+		
+		function contar(){
+			b=b+1;
+			lm.innerHTML="Time: "+b+"<br>";
+			crono=setTimeout(contar,1000)
+			if (b==60) {
+				square.style.background="black";
+				i.innerHTML="Fin del juego"+"<br>";
+				square.innerHTML="Obtuviste"+" "+score+" "+"puntos"
+				square.style.padding=2+"px";
+				clearTimeout(crono);
+				score=0;
+			}
+
+		}
+
+
+	</script>
+</body>
+</html>
